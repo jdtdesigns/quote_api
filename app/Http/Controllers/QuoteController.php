@@ -26,7 +26,7 @@ class QuoteController extends Controller
     		$quotes = Quote::limit(intval($amount));
 
     	if ( $amount && $type )    	
-    		$quotes = Quote::inRandomOrder()->limit(intval($amount));
+    		$quotes = Quote::inRandomOrder()->limit(intval($amount))->get();
     	
     	if ( $type == 'rand' && !$amount)
     		$quotes = Quote::inRandomOrder()->first();
