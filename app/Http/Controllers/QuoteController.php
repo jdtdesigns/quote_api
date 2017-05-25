@@ -34,10 +34,6 @@ class QuoteController extends Controller
     	if ( $id ) 
     		$quotes = Quote::find(intval($id));
 
-			// if ( $cb )
-			// 	return response()->json($quotes)->withCallback($cb);
-			// 	// $quotes->withCallback($cb);
-
 			if ( $first ) $quotes = Quote::first();
 
 			return $type == 'rand' || $first || $id ? $quotes : $quotes->get();    	
