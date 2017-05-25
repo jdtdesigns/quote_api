@@ -12,7 +12,6 @@ class QuoteController extends Controller
     	$type = request()->input('type');
     	$amount = request()->input('amount');
     	$id = request()->input('id');
-    	$cb = request()->input('callback');
     	$first = !$amount && !$id && $type != 'rand';
     	
     	if ( $amount && $id )
