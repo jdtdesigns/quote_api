@@ -31,7 +31,7 @@ class QuoteController extends Controller
     	if ( $type == 'rand' && !$amount)
     		$quotes = Quote::inRandomOrder()->first();
 
-    	if ( $id )
+    	if ( $id ) 
     		$quotes = Quote::find(intval($id));
 
 			// if ( $cb )
@@ -40,6 +40,6 @@ class QuoteController extends Controller
 
 			if ( $first ) $quotes = Quote::first();
 
-			return $type == 'rand' || $first ? $quotes : $quotes->get();    	
+			return $type == 'rand' || $first || $id ? $quotes : $quotes->get();    	
     }
 }
